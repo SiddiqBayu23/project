@@ -76,7 +76,7 @@ const BoilerTypesPage = () => {
       <Hero
         title="Types of Marine Boilers"
         subtitle="Explore the various boiler designs used in maritime applications, their characteristics, advantages, and specific use cases."
-        imageSrc="https://images.pexels.com/photos/2132047/pexels-photo-2132047.jpeg"
+        imageSrc=""
       />
       
       <ContentSection title="Understanding Marine Boilers" className="bg-white">
@@ -135,7 +135,7 @@ const BoilerTypesPage = () => {
           
           <div>
             <BoilerDiagram 
-              imageSrc="https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg" 
+              imageSrc="" 
               parts={waterTubeBoilerParts} 
             />
             
@@ -194,7 +194,7 @@ const BoilerTypesPage = () => {
           
           <div>
             <BoilerDiagram 
-              imageSrc="https://images.pexels.com/photos/2086621/pexels-photo-2086621.jpeg" 
+              imageSrc="" 
               parts={fireTubeBoilerParts} 
             />
             

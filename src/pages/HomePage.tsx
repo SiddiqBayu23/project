@@ -53,9 +53,9 @@ const HomePage = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-white rounded-lg shadow-md overflow-hidden">
             <img 
-              src="https://images.pexels.com/photos/3888149/pexels-photo-3888149.jpeg" 
+              src="https://iili.io/F5qMywQ.jpg" 
               alt="Ship engine room" 
-              className="w-full h-48 object-cover"
+              className="w-full h-48 object-center"
             />
             <div className="p-6">
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Types of Marine Boilers</h3>
@@ -74,9 +74,9 @@ const HomePage = () => {
           
           <div className="bg-white rounded-lg shadow-md overflow-hidden">
             <img 
-              src="https://images.pexels.com/photos/2873557/pexels-photo-2873557.jpeg" 
+              src="https://iili.io/F5qQxYg.jpg"
               alt="Control panel" 
-              className="w-full h-48 object-cover"
+              className="w-full h-48 object-center"
             />
             <div className="p-6">
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Boiler Operations</h3>
@@ -97,7 +97,7 @@ const HomePage = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
           <div className="bg-white rounded-lg shadow-md overflow-hidden">
             <img 
-              src="https://images.pexels.com/photos/162568/oil-pump-jack-sunset-clouds-silhouette-162568.jpeg" 
+              src="https://iili.io/F5qpdyF.png"
               alt="Maintenance worker" 
               className="w-full h-48 object-cover"
             />
