@@ -135,7 +135,7 @@ const BoilerTypesPage = () => {
           
           <div>
             <BoilerDiagram 
-              imageSrc="" 
+              imageSrc="https://iili.io/F1ujhy7.png" 
               parts={waterTubeBoilerParts} 
             />
             
@@ -194,7 +194,7 @@ const BoilerTypesPage = () => {
           
           <div>
             <BoilerDiagram 
-              imageSrc="" 
+              imageSrc="https://iili.io/F1uXJwu.png" 
               parts={fireTubeBoilerParts} 
             />
             
