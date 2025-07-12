@@ -97,7 +97,7 @@ const HomePage = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
           <div className="bg-white rounded-lg shadow-md overflow-hidden">
             <img 
-              src="https://iili.io/F5qpdyF.png"
+              src="https://iili.io/F5qQxYg.jpg"
               alt="Maintenance worker" 
               className="w-full h-48 object-cover"
             />
