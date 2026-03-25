@@ -71,6 +71,34 @@ const BoilerTypesPage = () => {
     }
   ];
 
+  // ARRAY BARU UNTUK BOILER TAMBAHAN
+  const verticalBoilerParts = [
+    {
+      id: 'hemispherical-furnace',
+      name: 'Hemispherical Furnace',
+      description: 'A seamless furnace design providing high strength and excellent radiant heat transfer.',
+      coordinates: { x: 50, y: 75 }
+    },
+    {
+      id: 'vertical-shell',
+      name: 'Vertical Shell',
+      description: 'The upright cylindrical outer shell that saves deck space while holding water and steam.',
+      coordinates: { x: 20, y: 40 }
+    },
+    {
+      id: 'horizontal-tubes',
+      name: 'Horizontal Fire Tubes',
+      description: 'Tubes that carry combustion gases horizontally through the water space.',
+      coordinates: { x: 50, y: 45 }
+    },
+    {
+      id: 'uptake',
+      name: 'Uptake / Funnel',
+      description: 'Directs exhaust gases from the boiler up to the exhaust funnel.',
+      coordinates: { x: 50, y: 15 }
+    }
+  ];
+
   return (
     <div>
       <Hero
@@ -213,10 +241,57 @@ const BoilerTypesPage = () => {
                     Horizontally oriented with multiple small fire tubes, adapted for marine use in smaller vessels.
                   </p>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ContentSection>
+
+      {/* --- BAGIAN BARU YANG DITAMBAHKAN --- */}
+      <ContentSection title="Vertical Boilers" className="bg-gray-50" id="vertical-boiler">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div>
+            <h3 className="text-xl font-semibold text-gray-900 mb-4">Characteristics</h3>
+            <p className="text-gray-700 mb-4">
+              Vertical boilers are a specific subtype of fire-tube boilers arranged in an upright position. They are highly valued on ships where deck space is extremely limited, often serving as auxiliary boilers.
+            </p>
+            
+            <h4 className="text-lg font-medium text-gray-900 mt-6 mb-3">Advantages</h4>
+            <ul className="list-disc pl-5 space-y-2 text-gray-700">
+              <li>Very small footprint, saving valuable floor space</li>
+              <li>Relatively simple to operate and maintain</li>
+              <li>Ideal for auxiliary services like heating and domestic steam</li>
+              <li>Good natural circulation of water</li>
+            </ul>
+            
+            <h4 className="text-lg font-medium text-gray-900 mt-6 mb-3">Limitations</h4>
+            <ul className="list-disc pl-5 space-y-2 text-gray-700">
+              <li>Generally restricted to lower steam output capacities</li>
+              <li>Lower overall thermal efficiency compared to large horizontal units</li>
+              <li>Height can sometimes be an issue in certain deck layouts</li>
+            </ul>
+          </div>
+          
+          <div>
+            <BoilerDiagram 
+              /* Kamu bisa mengganti URL gambar ini dengan gambar vertical boiler milikmu nanti */
+              imageSrc="https://via.placeholder.com/600x400?text=Vertical+Boiler+Diagram" 
+              parts={verticalBoilerParts} 
+            />
+            
+            <div className="mt-6 bg-white p-4 rounded-lg shadow-sm">
+              <h4 className="text-lg font-medium text-gray-900 mb-3">Common Designs</h4>
+              <div className="space-y-4">
                 <div>
                   <h5 className="font-medium text-gray-800">Cochran Boilers</h5>
                   <p className="text-gray-600 text-sm">
-                    Vertical fire-tube design with good efficiency for auxiliary services.
+                    A very famous vertical design featuring a hemispherical seamless furnace and horizontal fire tubes, widely used for auxiliary ship steam.
+                  </p>
+                </div>
+                <div>
+                  <h5 className="font-medium text-gray-800">Spanner Boilers</h5>
+                  <p className="text-gray-600 text-sm">
+                    Utilizes special 'Swirlyflo' tubes to increase heat transfer efficiency in a compact vertical arrangement.
                   </p>
                 </div>
               </div>
@@ -224,8 +299,10 @@ const BoilerTypesPage = () => {
           </div>
         </div>
       </ContentSection>
+      {/* --- AKHIR BAGIAN BARU --- */}
       
-      <ContentSection title="Composite Boilers" className="bg-gray-50" id="composite">
+      {/* Warna background Composite diubah menjadi bg-white agar selang-seling */}
+      <ContentSection title="Composite Boilers" className="bg-white" id="composite">
         <div className="prose max-w-none">
           <p>
             Composite boilers combine features of both water-tube and fire-tube designs to leverage advantages of each type. They typically have a water-tube furnace section for rapid steam generation and a fire-tube section for economical heat recovery.
@@ -251,14 +328,14 @@ const BoilerTypesPage = () => {
         </div>
       </ContentSection>
       
-      <ContentSection title="Exhaust Gas Boilers" className="bg-white" id="exhaust-gas">
+      <ContentSection title="Exhaust Gas Boilers" className="bg-gray-50" id="exhaust-gas">
         <div className="prose max-w-none">
           <p>
             Exhaust gas boilers (also called waste heat recovery boilers) utilize heat from engine exhaust gases to generate steam, improving overall vessel efficiency by recovering energy that would otherwise be lost.
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-8">
-            <div className="bg-gray-50 p-6 rounded-lg">
+            <div className="bg-white p-6 rounded-lg shadow-sm">
               <h3 className="text-xl font-semibold mb-4">Design Features</h3>
               <ul className="space-y-2">
                 <li>Typically water-tube configuration</li>
@@ -268,7 +345,7 @@ const BoilerTypesPage = () => {
               </ul>
             </div>
             
-            <div className="bg-gray-50 p-6 rounded-lg">
+            <div className="bg-white p-6 rounded-lg shadow-sm">
               <h3 className="text-xl font-semibold mb-4">Efficiency Benefits</h3>
               <ul className="space-y-2">
                 <li>Reduces overall fuel consumption</li>
