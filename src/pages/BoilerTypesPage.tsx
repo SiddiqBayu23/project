@@ -71,34 +71,6 @@ const BoilerTypesPage = () => {
     }
   ];
 
-  // ARRAY BARU UNTUK BOILER TAMBAHAN
-  const verticalBoilerParts = [
-    {
-      id: 'hemispherical-furnace',
-      name: 'Hemispherical Furnace',
-      description: 'A seamless furnace design providing high strength and excellent radiant heat transfer.',
-      coordinates: { x: 50, y: 75 }
-    },
-    {
-      id: 'vertical-shell',
-      name: 'Vertical Shell',
-      description: 'The upright cylindrical outer shell that saves deck space while holding water and steam.',
-      coordinates: { x: 20, y: 40 }
-    },
-    {
-      id: 'horizontal-tubes',
-      name: 'Horizontal Fire Tubes',
-      description: 'Tubes that carry combustion gases horizontally through the water space.',
-      coordinates: { x: 50, y: 45 }
-    },
-    {
-      id: 'uptake',
-      name: 'Uptake / Funnel',
-      description: 'Directs exhaust gases from the boiler up to the exhaust funnel.',
-      coordinates: { x: 50, y: 15 }
-    }
-  ];
-
   return (
     <div>
       <Hero
@@ -247,62 +219,167 @@ const BoilerTypesPage = () => {
         </div>
       </ContentSection>
 
-      {/* --- BAGIAN BARU YANG DITAMBAHKAN --- */}
-      <ContentSection title="Vertical Boilers" className="bg-gray-50" id="vertical-boiler">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">Characteristics</h3>
-            <p className="text-gray-700 mb-4">
-              Vertical boilers are a specific subtype of fire-tube boilers arranged in an upright position. They are highly valued on ships where deck space is extremely limited, often serving as auxiliary boilers.
-            </p>
-            
-            <h4 className="text-lg font-medium text-gray-900 mt-6 mb-3">Advantages</h4>
-            <ul className="list-disc pl-5 space-y-2 text-gray-700">
-              <li>Very small footprint, saving valuable floor space</li>
-              <li>Relatively simple to operate and maintain</li>
-              <li>Ideal for auxiliary services like heating and domestic steam</li>
-              <li>Good natural circulation of water</li>
-            </ul>
-            
-            <h4 className="text-lg font-medium text-gray-900 mt-6 mb-3">Limitations</h4>
-            <ul className="list-disc pl-5 space-y-2 text-gray-700">
-              <li>Generally restricted to lower steam output capacities</li>
-              <li>Lower overall thermal efficiency compared to large horizontal units</li>
-              <li>Height can sometimes be an issue in certain deck layouts</li>
-            </ul>
-          </div>
-          
-          <div>
-            <BoilerDiagram 
-              /* Kamu bisa mengganti URL gambar ini dengan gambar vertical boiler milikmu nanti */
-              imageSrc="https://via.placeholder.com/600x400?text=Vertical+Boiler+Diagram" 
-              parts={verticalBoilerParts} 
-            />
-            
-            <div className="mt-6 bg-white p-4 rounded-lg shadow-sm">
-              <h4 className="text-lg font-medium text-gray-900 mb-3">Common Designs</h4>
-              <div className="space-y-4">
-                <div>
-                  <h5 className="font-medium text-gray-800">Cochran Boilers</h5>
-                  <p className="text-gray-600 text-sm">
-                    A very famous vertical design featuring a hemispherical seamless furnace and horizontal fire tubes, widely used for auxiliary ship steam.
-                  </p>
-                </div>
-                <div>
-                  <h5 className="font-medium text-gray-800">Spanner Boilers</h5>
-                  <p className="text-gray-600 text-sm">
-                    Utilizes special 'Swirlyflo' tubes to increase heat transfer efficiency in a compact vertical arrangement.
-                  </p>
-                </div>
+      {/* --- BAGIAN P&ID OSAKA BOILER --- */}
+      <ContentSection title="Piping & Instrumentation Diagram (P&ID)" className="bg-gray-50" id="pid-diagram">
+        <div className="prose max-w-none text-gray-700">
+          <div className="bg-blue-50 border-l-4 border-blue-600 p-5 mb-6 rounded-r-lg shadow-sm">
+            <h3 className="text-xl font-bold text-blue-900 mt-0 mb-3 border-b border-blue-200 pb-2">Spesifikasi Boiler Diagram</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <p className="text-sm text-blue-700 mb-1 font-semibold">Merek (Manufacturer)</p>
+                <p className="text-lg text-blue-900 font-bold">Osaka Boiler Mfg. Co.</p>
               </div>
+              <div>
+                <p className="text-sm text-blue-700 mb-1 font-semibold">Tipe (Boiler Type)</p>
+                <p className="text-lg text-blue-900 font-bold">Composite Boiler <span className="text-sm font-normal text-blue-800">(Exhaust Gas & Oil Fired)</span></p>
+              </div>
+            </div>
+          </div>
+
+          <p className="text-lg mb-6">
+            Gambar di bawah ini adalah <strong>Piping & Instrumentation Diagram (P&ID)</strong> yang menunjukkan bagaimana air, uap, bahan bakar, dan udara mengalir serta bagaimana sistem tersebut dikontrol pada boiler di atas.
+          </p>
+          
+          <div className="my-8 flex justify-center bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+            <img 
+              src="https://i.ibb.co.com/Wvfs943t/Gemini-Generated-Image-debeizdebeizdebe.png" 
+              alt="P&ID Osaka Boiler" 
+              className="max-w-full h-auto rounded-lg"
+            />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+              <h3 className="text-lg font-bold text-blue-800 mb-3 border-b border-gray-200 pb-2">1. Sistem Pengumpan Air (Feed Water System)</h3>
+              <p className="text-sm mb-3">Di sisi kiri bawah, terdapat dua jalur masuk utama:</p>
+              <ul className="list-disc pl-5 space-y-2 text-sm">
+                <li><strong>Main Feed Water Line:</strong> Jalur utama air pengisi boiler.</li>
+                <li><strong>Aux Feed Water Line:</strong> Jalur cadangan (auxiliary) jika jalur utama bermasalah.</li>
+                <li><strong>V3 & V4:</strong> Merupakan katup penahan (Stop Valve) dan katup satu arah (Check Valve) untuk memastikan air masuk ke boiler dan tidak berbalik arah saat tekanan boiler tinggi.</li>
+              </ul>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+              <h3 className="text-lg font-bold text-blue-800 mb-3 border-b border-gray-200 pb-2">2. Sistem Uap & Keamanan (Steam & Safety)</h3>
+              <p className="text-sm mb-3">Bagian atas boiler adalah tempat uap berkumpul:</p>
+              <ul className="list-disc pl-5 space-y-2 text-sm">
+                <li><strong>V2 (Steam Stop Valve):</strong> Katup utama untuk menyalurkan uap keluar menuju sistem yang membutuhkan (misalnya pemanas atau mesin).</li>
+                <li><strong>V1 (Safety Valve):</strong> Komponen paling krusial. Terdapat dua katup pengaman yang akan terbuka otomatis jika tekanan di dalam boiler melebihi batas aman untuk mencegah ledakan.</li>
+                <li><strong>V11 (Air Vent Valve):</strong> Digunakan untuk membuang udara saat boiler pertama kali diisi air atau saat mulai dipanaskan.</li>
+              </ul>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+              <h3 className="text-lg font-bold text-blue-800 mb-3 border-b border-gray-200 pb-2">3. Sistem Pembakaran (Burner System)</h3>
+              <p className="text-sm mb-3">Di sisi kanan, terdapat unit Burner (B1):</p>
+              <ul className="list-disc pl-5 space-y-2 text-sm">
+                <li><strong>Burner Cont. Panel:</strong> Panel kontrol yang mengatur kapan api harus menyala atau mati berdasarkan tekanan uap.</li>
+                <li><strong>Fuel Burning Gas Outlet:</strong> Saluran gas hasil pembakaran menuju cerobong.</li>
+                <li><strong>B2 (Pressure Switch):</strong> Sensor yang mendeteksi tekanan uap. Jika tekanan sudah cukup, sensor ini memberi sinyal ke panel untuk mematikan burner.</li>
+              </ul>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+              <h3 className="text-lg font-bold text-blue-800 mb-3 border-b border-gray-200 pb-2">4. Monitoring & Level Air (Instrumentation)</h3>
+              <p className="text-sm mb-3">Boiler harus selalu memiliki level air yang pas:</p>
+              <ul className="list-disc pl-5 space-y-2 text-sm">
+                <li><strong>WLG (Water Level Gauge):</strong> Gelas duga di sisi kanan (V14) yang memungkinkan operator melihat langsung ketinggian air di dalam boiler secara visual.</li>
+                <li><strong>T1 (Thermometer):</strong> Sensor suhu untuk memantau panas air dan uap.</li>
+                <li><strong>M (Manometer/Pressure Gauge):</strong> Alat ukur tekanan yang dipasang di bagian atas agar operator tahu berapa tekanan kerja boiler saat ini.</li>
+              </ul>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 md:col-span-2 hover:shadow-md transition-shadow">
+              <h3 className="text-lg font-bold text-blue-800 mb-3 border-b border-gray-200 pb-2">5. Sistem Pembersihan (Blow-off System)</h3>
+              <p className="text-sm mb-3">Di bagian bawah terdapat jalur pembuangan:</p>
+              <ul className="list-disc pl-5 space-y-2 text-sm">
+                <li><strong>V5 (Surface Blow-off):</strong> Membuang kotoran atau minyak yang mengapung di permukaan air.</li>
+                <li><strong>V6 (Bottom Blow-off):</strong> Membuang endapan lumpur atau kerak yang mengendap di dasar boiler.</li>
+              </ul>
             </div>
           </div>
         </div>
       </ContentSection>
-      {/* --- AKHIR BAGIAN BARU --- */}
+
+      {/* --- BAGIAN BARU: DAFTAR MEREK & TIPE BOILER LAINNYA --- */}
+      <ContentSection title="Popular Marine Boiler Manufacturers" className="bg-white" id="manufacturers">
+        <div className="prose max-w-none text-gray-700 mb-8">
+          <p>
+            Selain Osaka Boiler, terdapat berbagai produsen (manufaktur) terkemuka lainnya di dunia perkapalan yang mensuplai berbagai tipe boiler untuk kebutuhan kapal komersial maupun angkatan laut:
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Alfa Laval */}
+          <div className="bg-gray-50 p-6 rounded-lg border border-gray-200 hover:shadow-md transition-shadow">
+            <h4 className="text-lg font-bold text-blue-900 mb-2">Alfa Laval (Aalborg)</h4>
+            <p className="text-sm text-gray-500 mb-3 border-b pb-2">Swedia / Denmark</p>
+            <ul className="list-disc pl-5 space-y-1 text-sm text-gray-700">
+              <li>Aalborg OL (Oil-Fired Boiler)</li>
+              <li>Aalborg EX (Exhaust Gas Boiler)</li>
+              <li>Aalborg Mission (Composite Boiler)</li>
+            </ul>
+          </div>
+
+          {/* Miura */}
+          <div className="bg-gray-50 p-6 rounded-lg border border-gray-200 hover:shadow-md transition-shadow">
+            <h4 className="text-lg font-bold text-blue-900 mb-2">Miura Co., Ltd.</h4>
+            <p className="text-sm text-gray-500 mb-3 border-b pb-2">Jepang</p>
+            <ul className="list-disc pl-5 space-y-1 text-sm text-gray-700">
+              <li>HB Series (Marine Auxiliary Boiler)</li>
+              <li>Gas-Fired Marine Boilers</li>
+              <li>Thermal Fluid Heaters</li>
+            </ul>
+          </div>
+
+          {/* KangRim */}
+          <div className="bg-gray-50 p-6 rounded-lg border border-gray-200 hover:shadow-md transition-shadow">
+            <h4 className="text-lg font-bold text-blue-900 mb-2">KangRim Heavy Ind.</h4>
+            <p className="text-sm text-gray-500 mb-3 border-b pb-2">Korea Selatan</p>
+            <ul className="list-disc pl-5 space-y-1 text-sm text-gray-700">
+              <li>PB Series (Water Tube Boiler)</li>
+              <li>PA Series (Composite Boiler)</li>
+              <li>Exhaust Gas Economizers</li>
+            </ul>
+          </div>
+
+          {/* SAACKE */}
+          <div className="bg-gray-50 p-6 rounded-lg border border-gray-200 hover:shadow-md transition-shadow">
+            <h4 className="text-lg font-bold text-blue-900 mb-2">SAACKE</h4>
+            <p className="text-sm text-gray-500 mb-3 border-b pb-2">Jerman</p>
+            <ul className="list-disc pl-5 space-y-1 text-sm text-gray-700">
+              <li>FMB-VF (Vertical Fire-Tube Boiler)</li>
+              <li>FMB-VD (Water-Tube Boiler)</li>
+              <li>Composite Boilers</li>
+            </ul>
+          </div>
+
+          {/* Mitsubishi */}
+          <div className="bg-gray-50 p-6 rounded-lg border border-gray-200 hover:shadow-md transition-shadow">
+            <h4 className="text-lg font-bold text-blue-900 mb-2">Mitsubishi Heavy Ind.</h4>
+            <p className="text-sm text-gray-500 mb-3 border-b pb-2">Jepang</p>
+            <ul className="list-disc pl-5 space-y-1 text-sm text-gray-700">
+              <li>MAC Series (Auxiliary Boiler)</li>
+              <li>MCB Series (Composite Boiler)</li>
+              <li>Two-Drum Water Tube Boilers</li>
+            </ul>
+          </div>
+
+          {/* Babcock & Wilcox */}
+          <div className="bg-gray-50 p-6 rounded-lg border border-gray-200 hover:shadow-md transition-shadow">
+            <h4 className="text-lg font-bold text-blue-900 mb-2">Babcock & Wilcox</h4>
+            <p className="text-sm text-gray-500 mb-3 border-b pb-2">Amerika Serikat</p>
+            <ul className="list-disc pl-5 space-y-1 text-sm text-gray-700">
+              <li>D-Type Water Tube Boilers</li>
+              <li>M-Type Marine Boilers</li>
+              <li>Header-Type Boilers (Naval)</li>
+            </ul>
+          </div>
+        </div>
+      </ContentSection>
+      {/* --- AKHIR BAGIAN MEREK & TIPE BOILER --- */}
       
-      {/* Warna background Composite diubah menjadi bg-white agar selang-seling */}
-      <ContentSection title="Composite Boilers" className="bg-white" id="composite">
+      <ContentSection title="Composite Boilers" className="bg-gray-50" id="composite">
         <div className="prose max-w-none">
           <p>
             Composite boilers combine features of both water-tube and fire-tube designs to leverage advantages of each type. They typically have a water-tube furnace section for rapid steam generation and a fire-tube section for economical heat recovery.
@@ -328,14 +405,14 @@ const BoilerTypesPage = () => {
         </div>
       </ContentSection>
       
-      <ContentSection title="Exhaust Gas Boilers" className="bg-gray-50" id="exhaust-gas">
+      <ContentSection title="Exhaust Gas Boilers" className="bg-white" id="exhaust-gas">
         <div className="prose max-w-none">
           <p>
             Exhaust gas boilers (also called waste heat recovery boilers) utilize heat from engine exhaust gases to generate steam, improving overall vessel efficiency by recovering energy that would otherwise be lost.
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-8">
-            <div className="bg-white p-6 rounded-lg shadow-sm">
+            <div className="bg-gray-50 p-6 rounded-lg shadow-sm">
               <h3 className="text-xl font-semibold mb-4">Design Features</h3>
               <ul className="space-y-2">
                 <li>Typically water-tube configuration</li>
@@ -345,7 +422,7 @@ const BoilerTypesPage = () => {
               </ul>
             </div>
             
-            <div className="bg-white p-6 rounded-lg shadow-sm">
+            <div className="bg-gray-50 p-6 rounded-lg shadow-sm">
               <h3 className="text-xl font-semibold mb-4">Efficiency Benefits</h3>
               <ul className="space-y-2">
                 <li>Reduces overall fuel consumption</li>
